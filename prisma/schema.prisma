@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ItemCategory {
+  SANDWICH
+  BEVERAGE
+  SIDE
+  DESSERT
+}
+
+
+model Item {
+  id          String        @id @default(uuid())
+  name        String
+  description String
+  images      String[]
+  price       Decimal       @db.Decimal(10, 2)
+  quantity    Int
+  category    ItemCategory
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  isDeleted   Boolean       @default(false)
+
+ @@index([category, isDeleted], map: "idx_item_category_status")
+
+   /*
+   esse index precisa ser criado diretamento no dbeaver/Postgresql, 
+   o prima não aceita índices condicionais
+   CREATE INDEX idx_item_category_active ON public."Item" USING btree (category) WHERE ("isDeleted" = false);
+   */
+  
+}
+
+
