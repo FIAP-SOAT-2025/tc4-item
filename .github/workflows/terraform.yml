@@ -104,16 +104,16 @@ jobs:
       - name: Verify API Deployment
         run: |
           echo "Waiting for API pod to be ready..."
-          kubectl wait --for=condition=ready pod -l app=lanchonete-api -n lanchonete-tc2 --timeout=300s
-          kubectl get pods -n lanchonete-tc2
-          kubectl get services -n lanchonete-tc2
+          kubectl wait --for=condition=ready pod -l app=tc4-item-api -n tc4-item --timeout=300s
+          kubectl get pods -n tc4-item
+          kubectl get services -n tc4-item
       
       - name: Get LoadBalancer URL
         id: get-url
         run: |
           echo "Waiting for LoadBalancer to get external IP..."
           sleep 60
-          LB_HOSTNAME=$(kubectl get svc api-service -n lanchonete-tc2 -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+          LB_HOSTNAME=$(kubectl get svc api-service -n tc4-item -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
           if [ -n "$LB_HOSTNAME" ]; then
             echo "loadbalancer-url=http://$LB_HOSTNAME" >> $GITHUB_OUTPUT
             echo "LoadBalancer URL: http://$LB_HOSTNAME"
@@ -140,7 +140,7 @@ jobs:
       - name: Output API Info
         run: |
           echo "API deployed successfully!"
-          echo "Namespace: lanchonete-tc2"
+          echo "Namespace: tc4-item"
           echo "Service: api-service"
           echo "LoadBalancer: ${{ steps.get-url.outputs.loadbalancer-url }}"
 
@@ -226,6 +226,6 @@ jobs:
         run: |
           echo "Verifying resource destruction..."
           if [ "${{ steps.check-cluster.outputs.cluster-exists }}" == "true" ]; then
-            kubectl get pods -n lanchonete-tc2 2>/dev/null || echo "Namespace lanchonete-tc2 destroyed or not found"
+            kubectl get pods -n tc4-item 2>/dev/null || echo "Namespace tc4-item destroyed or not found"
           fi
           echo "API destroy job completed"
