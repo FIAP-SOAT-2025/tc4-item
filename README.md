@@ -195,8 +195,11 @@ npm run start:dev
 # Executar todos os testes
 npm run test
 ```
-Cobertura acima de 70%
+Cobertura acima de 70% no Sonar
 ![Cobertura de tests](./asserts/teste_item.png)
+
+Cobertura acima de 80% no projeto
+![Cobertura de tests no projeto](./asserts/test-item-projeto.png)
 
 ---
 
