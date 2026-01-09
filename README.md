@@ -107,7 +107,7 @@ O sistema foi desenvolvido seguindo a *arquitetura limpa*, com uma estrutura mod
 
 ## Desenho da infraestrutura
 
-![Descrição da imagem]()
+![Desenho da infraestrutura](./asserts/infra_tc4.png)
 
 ## Desenho do Banco de dados 
 
@@ -195,6 +195,8 @@ npm run start:dev
 # Executar todos os testes
 npm run test
 ```
+Cobertura acima de 70%
+![Cobertura de tests](./asserts/teste_item.png)
 
 ---
 
