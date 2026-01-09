@@ -21,7 +21,6 @@
 - [Tecnologias](#️-tecnologias)
 - [Arquitetura](#️-arquitetura)
 - [Linguagem Ubíqua](#-linguagem-ubíqua)
-- [Desenho de requisitos do negócio](#️-requisitos-negócio)
 - [Desenho da infraestrutura](#️-requisitos-infra)
 - [Configuração](#️-configuração)
 - [Execução](#️-execução)
@@ -100,22 +99,9 @@ O sistema foi desenvolvido seguindo a *arquitetura limpa*, com uma estrutura mod
 
 ---
 
-## Desenho de requisitos do negócio
-
-![Descrição da imagem]()
-
-
 ## Desenho da infraestrutura
 
 ![Desenho da infraestrutura](./asserts/infra_tc4.png)
-
-## Desenho do Banco de dados 
-
-
-([Documentação do Banco de dados]())
-
-![Descrição da imagem]()
-
 
 ## Pré-requisitos
 
