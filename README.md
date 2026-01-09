@@ -195,6 +195,8 @@ npm run start:dev
 # Executar todos os testes
 npm run test
 ```
+Cobertura acima de 70%
+![Cobertura de tests](./asserts/teste_item.png)
 
 ---
 
