@@ -8,9 +8,7 @@
 
 - [Collection Postman]() 
 - [Event Storming: Miro Board](https://miro.com/app/board/uXjVIFyKlHg=/) 
-- [ Link com referência aos outros repositórios ]() 
-- [ Vídeo de demonstração ]() 
-- [Documentação do Banco de dados]() 
+- [BDD - Especificação de Comportamento da Entidade Item](src/item/test/entities/item.entity.feature) 
 
 ### 
 
